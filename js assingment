@@ -1,0 +1,130 @@
+console.clear();
+console.log("Q1 END =====================")
+// Question 1:
+// Write a program to search if a number exists in an array. If the number exists then return the position.
+//If it exists multiple time then return an array with all the positions. If the number doesn't exist then return -1;
+// For example,
+// Input: [1, 2, 3, 4, 5, 1, 3] and Search Elem: 4
+// Output: 3
+// Input: [1, 2, 3, 4, 5, 1, 3] and Search Elem: 1
+// Output: [0, 5]
+// Input: [1, 2, 3, 4, 5, 1, 3] and Search Elem: 7
+// Output: -1
+
+function findposition(array,target){
+  for(let m = 0; m < array.length; m++){
+    if(array[m] === target)
+    return m
+
+  }
+  return -1
+}
+const myarray = [1,2,3,4,5,6,7];
+const ans =findposition(myarray,6)  
+console.log(ans)
+
+
+
+
+console.log("Q2 END =====================")
+// Question 2:
+// Write a program to print following pattern in the console.
+// 54321
+// 5432
+// 543
+// 54
+// 5
+
+function pattern(){
+    let n=5;
+    let str="";
+    for (let i = n; i >= 1; i--) {
+        for (let j = n; j >= n-i+1; j--) {
+          str += j;
+        }
+        str += "\n";
+      }
+      console.log(str);
+    }
+console.log(pattern());
+
+
+
+console.log("Q3 END =====================")
+
+// Question 3:
+// Write a JavaScript program to sort an array in ascending order
+// For example,
+// Input: [3, 2, 1, 4, 5, 45]
+// Output: [1, 2, 3, 4, 5, 45]
+
+function sortArray(){
+    let ar=[3, 2, 1, 4, 50, 45];
+    let i = 0, j;
+    while (i < ar.length) {
+        j = i + 1;
+        while (j < ar.length) {
+ 
+            if (ar[j] < ar[i]) {
+                let temp = ar[i];
+                ar[i] = ar[j];
+                ar[j] = temp;
+            }
+            j++;
+        }
+        i++;
+    } 
+    console.log(ar);
+
+}
+
+console.log(sortArray());
+
+
+console.log("Q4 END =====================")
+
+// Question 4:
+// Write a JavaScript program to check if two strings are anagrams. Anagram string are such two strings which can be rearranged to create one another.
+// For example,
+// Input: LISTEN and SILENT
+// Output: True
+// Input: HELLO and JELLO
+// Output: False
+
+function anangram(a,b){
+
+    let n1=a.length;
+    var n2=b.length;
+
+    if(n1!=n2){
+      console.log(false);
+    }
+  
+    let str1=a.split('').sort().join('');
+    let str2=b.split('').sort().join('');
+  
+    if(str1 === str2){
+      console.log("True");
+    } else { 
+      console.log("False");
+    }
+
+}
+
+//let s1=prompt("Enter string 1");
+//let s2=prompt("Enter string 2");
+//anangram(s1,s2);
+
+
+
+console.log("Q5 END =====================")
+// Question 5:
+// Write a JavaScript program to reverse a string without using inbuilt methods.
+// For example,
+// Input: Hello
+// Output: olleH
+
+const Name = "Hello";
+const reversedName = Name.split("").reverse().join("");
+prompt("write Hello").reversedName;
+console.log(reversedName)
